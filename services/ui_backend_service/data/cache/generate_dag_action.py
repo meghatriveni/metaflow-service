@@ -53,6 +53,8 @@ class GenerateDag(CacheAction):
         key_identifier = "{}/{}".format(flow_id, run_number)
         result_key = 'dag:result:%s' % hashlib.sha1((key_identifier).encode('utf-8')).hexdigest()
         stream_key = 'dag:stream:%s' % hashlib.sha1((key_identifier).encode('utf-8')).hexdigest()
+        
+        print("############result key############", result_key)
 
         return msg, \
             [result_key], \
